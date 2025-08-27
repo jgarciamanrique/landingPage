@@ -148,3 +148,31 @@ body {
   color: #aaa;
   margin-top: 10px;
 }
+
+/* ========================= */
+/* 📱 Responsive ajustes */
+/* ========================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;   /* Apila en columna */
+    padding: 30px 20px;
+  }
+
+  .hero-content, 
+  .hero-form {
+    width: 100%;             /* Ocupan todo el ancho */
+  }
+
+  .hero h1 {
+    font-size: 2rem;         /* Reduce tamaño del título */
+    text-align: center;
+  }
+
+  .cta-block {
+    justify-content: center;
+  }
+
+  .video-container video {
+    max-width: 100%;
+  }
+}
