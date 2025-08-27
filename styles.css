@@ -1,4 +1,6 @@
+/* ========================= */
 /* Reset básico */
+/* ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,20 +14,25 @@ body {
   line-height: 1.6;
 }
 
+/* ========================= */
 /* Hero section */
+/* ========================= */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 60px;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   gap: 40px;
+  flex-wrap: wrap; /* Para que los hijos puedan ajustarse */
 }
 
-/* Texto */
+/* Hero content */
 .hero-content {
   flex: 1;
+  min-width: 280px; /* evita que se encoja demasiado */
 }
 
 .hero h1 {
@@ -53,9 +60,12 @@ body {
   font-size: 1rem;
 }
 
-/* VIDEO */
+/* ========================= */
+/* Video container */
+/* ========================= */
 .video-container {
   margin: 20px 0;
+  width: 100%;
 }
 
 .video-container video {
@@ -63,9 +73,13 @@ body {
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  display: block;
+  margin: 0 auto;
 }
 
+/* ========================= */
 /* CTA solo botón */
+/* ========================= */
 .cta-block {
   display: flex;
   justify-content: center;
@@ -92,9 +106,12 @@ body {
   font-size: 1.1rem;
 }
 
-/* Formulario */
+/* ========================= */
+/* Formulario Hero */
+/* ========================= */
 .hero-form {
   flex: 1;
+  min-width: 280px;
   background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 12px;
@@ -138,7 +155,6 @@ body {
   text-decoration: underline;
 }
 
-/* BOTÓN del formulario centrado */
 .form-btn {
   text-align: center;
 }
@@ -150,29 +166,63 @@ body {
 }
 
 /* ========================= */
-/* 📱 Responsive ajustes */
+/* Responsive ajustes 📱 */
 /* ========================= */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;   /* Apila en columna */
     padding: 30px 20px;
+    gap: 20px;
   }
 
   .hero-content, 
   .hero-form {
-    width: 100%;             /* Ocupan todo el ancho */
+    width: 100%;
+    flex: unset;
+    text-align: center;
   }
 
   .hero h1 {
     font-size: 2rem;         /* Reduce tamaño del título */
+  }
+
+  .hero p,
+  .hero ul {
     text-align: center;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  .video-container video {
+    max-width: 100%;
   }
 
   .cta-block {
     justify-content: center;
   }
+}
 
-  .video-container video {
-    max-width: 100%;
+/* ========================= */
+/* Responsive extra pequeños 📱 */
+/* ========================= */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p,
+  .hero ul li {
+    font-size: 0.95rem;
+  }
+
+  .hero-form {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 }
